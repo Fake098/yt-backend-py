@@ -6,17 +6,17 @@ import json
 app = Flask(__name__)
 
 # Path to where your OAuth2 token data is stored
-TOKEN_CACHE_PATH = os.path.expanduser("~/.cache/yt-dlp/youtube-oauth2/token_data.json")
+# TOKEN_CACHE_PATH = os.path.expanduser("~/.cache/yt-dlp/youtube-oauth2/token_data.json")
 
 def fetch_video_info(url):
     # Check if the token data exists
-    if not os.path.exists(TOKEN_CACHE_PATH):
-        return {'error': 'OAuth2 token data not found. Please authorize yt-dlp locally first.'}
+    # if not os.path.exists(TOKEN_CACHE_PATH):
+    #     return {'error': 'OAuth2 token data not found. Please authorize yt-dlp locally first.'}
 
-    # Load the OAuth2 token data
-    with open(TOKEN_CACHE_PATH, 'r') as token_file:
-        token_data = json.load(token_file)
-    print("Loaded token data:", token_data)
+    # # Load the OAuth2 token data
+    # with open(TOKEN_CACHE_PATH, 'r') as token_file:
+    #     token_data = json.load(token_file)
+    # print("Loaded token data:", token_data)
 
     ydl_opts = {
         'quiet': True,
@@ -24,10 +24,6 @@ def fetch_video_info(url):
         'headers': {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         },
-        'username': 'oauth2',
-        'password': '',
-        'cachedir': os.path.dirname(TOKEN_CACHE_PATH),
-        'token_data': token_data,
         'verbose': True
     }
     print("Starting yt-dlp with options:", ydl_opts)
