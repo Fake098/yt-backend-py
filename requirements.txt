@@ -17,3 +17,4 @@ Werkzeug==3.0.4
 youtube-dl==2021.12.17
 yt-dlp==2024.8.6
 yt-dlp-youtube-oauth2 @ https://github.com/coletdjnz/yt-dlp-youtube-oauth2/archive/refs/heads/master.zip#sha256=771a515fe2be3dcaec55b754f6b6b0872dc7e7bef1261bac630998ee700253b7
+gunicorn==21.2.0
