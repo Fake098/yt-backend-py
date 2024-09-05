@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 
 # Path to where your OAuth2 token data is stored
-TOKEN_CACHE_PATH = os.path.expanduser("./token_data.json")
+TOKEN_CACHE_PATH = os.path.expanduser("~/.cache/yt-dlp/youtube-oauth2/token_data.json")
 
 def fetch_video_info(url):
     # Check if the token data exists
