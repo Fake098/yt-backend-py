@@ -44,6 +44,10 @@ def fetch_video_info(url):
         except Exception as e:
             return {'error': str(e)}
 
+@app.route('/',methods=["GET"])
+def welcome():
+    return "Welcome to the YouTube Downloader API!"
+
 @app.route('/download', methods=['POST'])
 def download():
     data = request.get_json()
